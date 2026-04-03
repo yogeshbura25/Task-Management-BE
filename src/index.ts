@@ -2,7 +2,7 @@ import express, { Express } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes';
-
+import taskRoutes from './routes/task.routes';
 import errorMiddleware from './middlewares/error.middleware';
 
 dotenv.config();
@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 // Routes
 app.use('/auth', authRoutes);
+app.use('/tasks', taskRoutes);
 
 // Global Error Handler
 app.use(errorMiddleware);
